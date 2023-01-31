@@ -1,0 +1,409 @@
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap);
+
+/* @import "../node_modules/modern-normalize/modern-normalize.css"; */
+/* npm install modern-normalize 
+                      Resets elements for browser consistancy.  
+                      http://nicolasgallagher.com/about-normalize-css/ 
+                    */
+
+/* Component-specific stylesheets, if any 
+          @import "component1.css";   
+                    */
+
+/*   ----- Variables  -----  */
+/* :root {
+            --custom-color-name:;
+            --custom-embellishment-name:;
+          } */
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {
+  /* Can alternatively define in html {} or :root {} */
+  color: rgb(7, 63, 85);
+  background-color: lightgray;
+  font-family: "Oswald", sans-serif;
+  font-size: large;
+  margin: 0;
+  min-width: fit-content;
+  text-align: center;
+  padding: 0;
+}
+
+/* ----- Anchors ----- Text links */
+a {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+a:hover {
+}
+a:active {
+}
+a:visited {
+  color: rgb(226, 198, 250);
+  text-decoration: none;
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  color: rgb(7, 4, 22);
+  background-color: rgb(43, 84, 197);
+  border: 1px solid rgb(7, 4, 22);
+  font-size: large;
+  font-weight: 200;
+  line-height: 2em;
+  margin: auto;
+  padding: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  border-radius: 0;
+  overflow: auto;
+}
+nav h3 {
+  color: white;
+  background-color: inherit;
+  text-decoration: none;
+  font-size: larger;
+  float: left;
+  margin-left: 5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  display: block;
+  display: inline-block;
+  vertical-align: middle;
+}
+nav a,
+nav a:active {
+  color: white;
+  background-color: inherit;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 200;
+  width: fit-content;
+  margin-right: 5em;
+  margin-top: 0.5rem;
+  vertical-align: middle;
+  border: none;
+  float: right;
+  text-align: center;
+  display: block;
+  display: inline-block;
+  padding: 2px;
+}
+nav a:visited {
+  color: white;
+  background-color: inherit;
+  text-decoration: none;
+  font-size: large;
+  font-weight: 200;
+  width: fit-content;
+  margin-right: 5em;
+  margin-top: 0.5rem;
+  vertical-align: middle;
+  border: none;
+  float: right;
+  text-align: center;
+  display: block;
+  display: inline-block;
+  padding: 2px;
+}
+nav a:hover {
+  color: lightgray;
+  background-color: rgb(7, 4, 22);
+  text-decoration: none;
+  font-size: large;
+  font-weight: 200;
+  width: fit-content;
+  padding: 2px;
+  margin-right: 5em;
+  margin-top: 0.5rem;
+  vertical-align: middle;
+  border: none;
+  float: right;
+  text-align: center;
+  display: block;
+  display: inline-block;
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color: rgb(7, 63, 85);
+  color: lightgray;
+  border: none;
+  font-size: large;
+  font-weight: 100;
+  margin: 0;
+  padding: 1%;
+}
+main {
+  background-color: rgb(7, 4, 22);
+  color: lightgray;
+}
+section {
+}
+article {
+}
+#topic1 {
+}
+#topic2 {
+}
+#gallery1 {
+}
+#gallery2 {
+}
+div {
+}
+aside {
+}
+footer {
+  background-color: rgb(43, 84, 197);
+  color: lightgray;
+  border: none;
+  font-size: medium;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+/*  -----  Typography  ----- */
+p {
+}
+br {
+}
+ol {
+  padding-bottom: 20px;
+}
+
+ul,
+dl {
+}
+li {
+}
+dt {
+}
+dd {
+}
+
+h1,
+h2 {
+  color: white;
+  padding-top: 20px;
+}
+h3,
+h4,
+h5,
+h6 {
+} /* Define consistant font family.*/
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+h5 {
+}
+h6 {
+}
+
+abbr {
+}
+acronym {
+}
+address {
+}
+blockquote {
+}
+q {
+}
+cite {
+}
+em {
+}
+hr {
+}
+mark {
+}
+s {
+}
+span {
+}
+strong {
+}
+sub {
+}
+sup {
+}
+time {
+}
+
+/*  ----- Coding or instructional typography ----- */
+pre {
+}
+code {
+}
+kbd {
+}
+samp {
+}
+var {
+}
+del {
+}
+ins {
+}
+
+/*  ----- Table ----- */
+table {
+}
+caption {
+}
+thead {
+}
+tbody {
+}
+tfoot {
+}
+tr {
+}
+tr:nth-child(even) {
+}
+th {
+}
+td {
+}
+td:nth-child(1) {
+}
+colgroup {
+}
+data {
+}
+datalist {
+}
+
+/*  ----- Form ----- */
+/* form {
+  padding: 1%;
+  font: large "Oswald", sans-serif;
+}
+fieldset {
+  border: 1px solid gray;
+}
+legend {
+  background-color: rgb(7, 4, 22);
+  color: lightgray;
+}
+label {
+  display: block;
+  margin-top: 20px;
+}
+button {
+  padding: 1%;
+  font: large "Oswald", sans-serif;
+  background-color: rgb(7, 63, 85);
+  color: lightgray;
+}
+button:hover {
+  background-color: lightgray;
+  color: rgb(7, 63, 85);
+}
+input {
+  padding: 1%;
+  font: large "Oswald", sans-serif;
+  min-width: 10em;
+}
+output {
+}
+meter {
+}
+progress {
+}
+select {
+  padding: 1%;
+  font: large "Oswald", sans-serif;
+} */
+optgroup {
+}
+option {
+}
+textarea {
+}
+
+/* ----- Media ----- */
+figure {
+}
+figcaption {
+}
+img {
+}
+svg {
+}
+picture {
+}
+source {
+}
+iframe {
+}
+video {
+}
+audio {
+}
+embed {
+}
+object {
+}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+.floatright {
+}
+.floatleft {
+}
+.center-middle {
+}
+
+.ten {
+}
+.twenty {
+}
+.thirty {
+}
+.forty {
+}
+.fifty {
+}
+.sixty {
+}
+.seventy {
+}
+.eighty {
+}
+
+.radius {
+}
+.circle {
+}
+.boxshadow {
+}
+.tshadow {
+}
+.gradient {
+}
+.shape {
+}
+
+@keyframes App-logo {
+}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {
+}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {
+}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {
+}

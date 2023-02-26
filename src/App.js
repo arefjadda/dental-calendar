@@ -34,7 +34,7 @@ function App(props) {
 
       <footer>
         <p>
-          Modified on 1/30/2023. <cite>&copy; 2023 Aref Jadda</cite>.
+          Modified on 2/25/2023. <cite>&copy; 2023 Aref Jadda</cite>.
         </p>
       </footer>
     </Router>

@@ -8,18 +8,18 @@ const { RangePicker } = DatePicker;
 function AddEvent(props) {
   return (
     <React.Fragment>
-      <Form>
+      <Form layout={"horizontal"}>
         <Form.Item
-          name="title"
           label="Full Name"
           style={inputStyles}
-          rules={[
-            { required: true, message: "Please input the patient's full name." }
-          ]}
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
         >
           <Input
             type="text"
             placeholder="ex. John Doe"
+            key="fullName"
             value={props.title}
             size="large"
             autoFocus={true}
@@ -27,39 +27,58 @@ function AddEvent(props) {
           />
         </Form.Item>
         <Form.Item
-          name="phone"
-          label="Phone Number"
-          rules={[
-            { required: true, message: "Please input your phone number." }
-          ]}
+          label="Gender"
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
         >
           <Input
             type="text"
-            placeholder="ex. 8085959999"
-            defaultValue={props.phone}
-            autoFocus={true}
-            onChange={props.onPhoneChange}
+            placeholder="Female or Male"
+            key="gender"
+            value={props.gender}
             size="large"
+            autoFocus={true}
+            onChange={props.onGenderChange}
           />
         </Form.Item>
         <Form.Item
-          name="reason"
-          label="Reason for Visit"
-          rules={[
-            {
-              required: true,
-              message: "Please input the patient's reason for visiting."
-            }
-          ]}
+          label="Email"
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
         >
-          <Input.TextArea size="large" showCount maxLength={100} />
+          <Input
+            type="email"
+            placeholder="ex. some_email@example.com"
+            key="email"
+            value={props.email}
+            size="large"
+            autoFocus={true}
+            onChange={props.onEmailChange}
+          />
         </Form.Item>
         <Form.Item
-          name="date"
+          label="Phone"
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
+        >
+          <Input
+            type="tel"
+            placeholder="ex. 8085959999"
+            key="phone"
+            value={props.phone}
+            size="large"
+            autoFocus={true}
+            onChange={props.onPhoneChange}
+          />
+        </Form.Item>
+        <Form.Item
           label="Date"
-          rules={[
-            { required: true, message: "Please input your phone number." }
-          ]}
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
         >
           <RangePicker
             style={{ width: "100%" }}
@@ -71,7 +90,7 @@ function AddEvent(props) {
               hourStep: 1,
               defaultValue: [moment(props.start), moment(props.end)]
             }}
-            format="MMM Do, YYYY hh a"
+            format="MMM D, YYYY h a"
           />
         </Form.Item>
       </Form>

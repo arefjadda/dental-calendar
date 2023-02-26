@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+/microservice/node_modules
+/microservice/package-lock.json
 
 # testing
 /coverage

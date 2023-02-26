@@ -283,54 +283,6 @@ data {
 datalist {
 }
 
-/*  ----- Form ----- */
-/* form {
-  padding: 1%;
-  font: large "Oswald", sans-serif;
-}
-fieldset {
-  border: 1px solid gray;
-}
-legend {
-  background-color: rgb(7, 4, 22);
-  color: lightgray;
-}
-label {
-  display: block;
-  margin-top: 20px;
-}
-button {
-  padding: 1%;
-  font: large "Oswald", sans-serif;
-  background-color: rgb(7, 63, 85);
-  color: lightgray;
-}
-button:hover {
-  background-color: lightgray;
-  color: rgb(7, 63, 85);
-}
-input {
-  padding: 1%;
-  font: large "Oswald", sans-serif;
-  min-width: 10em;
-}
-output {
-}
-meter {
-}
-progress {
-}
-select {
-  padding: 1%;
-  font: large "Oswald", sans-serif;
-} */
-optgroup {
-}
-option {
-}
-textarea {
-}
-
 /* ----- Media ----- */
 figure {
 }

@@ -78,7 +78,8 @@ export const spacify = {
 };
 
 export const inputStyles = {
-  marginTop: 25
+  marginTop: 25,
+  textAlign: "left"
 };
 
 export const weekButtons = {

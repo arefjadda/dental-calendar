@@ -2,6 +2,7 @@
   "name": "dental-clinic-calendar",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "antd": "^3.5.3",
     "moment": "^2.22.1",

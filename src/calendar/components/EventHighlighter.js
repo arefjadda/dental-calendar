@@ -24,10 +24,16 @@ class EventHighlighter extends Component {
   /**
    * Updates the event
    * @param {string} title - Updated title of the event
+   * @param {string} gender - Updated gender of the event
+   * @param {string} phone - Updated phone of the event
+   * @param {string} email - Updated email of the event
    */
-  updateEvent = (title) => {
+  updateEvent = (title, gender, phone, email) => {
     this.props.onEventUpdate(this.props.event.id, {
       title,
+      gender,
+      phone,
+      email,
       start: this.state.eventNewStart,
       end: this.state.eventNewEnd
     });
@@ -77,6 +83,9 @@ class EventHighlighter extends Component {
         <AddEventModal
           editMode={true}
           eventTitle={this.props.event.title}
+          eventGender={this.props.event.gender}
+          eventPhone={this.props.event.phone}
+          eventEmail={this.props.event.email}
           visible={showEditEventModal}
           onCancel={this.deleteEvent}
           onClose={this.closeModal}

@@ -27,10 +27,9 @@ const EventHandler = (function () {
    * @param {timeStamp} start - Start timestamp of the event
    * @param {timeStamp} end - End timeStamp of the event
    * @params {string} title - Title of the event
-   * @params {phone}
    * @returns {string} id - Unique id
    */
-  function generateUniqueId({ start, phone, title, end }) {
+  function generateUniqueId({ start, title, end }) {
     return start + title + end;
   }
 

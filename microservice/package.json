@@ -1,0 +1,17 @@
+{
+  "name": "user_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "user_generator.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon exercises-controller.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.16",
+    "random-profile-generator": "^2.3.0"
+  }
+}

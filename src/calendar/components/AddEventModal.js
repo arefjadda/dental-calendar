@@ -7,7 +7,9 @@ class AddEventModal extends Component {
     title: "",
     gender: "",
     phone: "",
-    email: ""
+    email: "",
+    reason: "",
+    special: false
   };
 
   /**
@@ -20,14 +22,18 @@ class AddEventModal extends Component {
         title: nextProps.eventTitle,
         gender: nextProps.eventGender,
         phone: nextProps.eventPhone,
-        email: nextProps.eventEmail
+        email: nextProps.eventEmail,
+        reason: nextProps.eventReason,
+        special: nextProps.eventSpecial
       };
     } else {
       return {
         title: "",
         gender: "",
         phone: "",
-        email: ""
+        email: "",
+        reason: "",
+        special: false
       };
     }
   }
@@ -67,9 +73,28 @@ class AddEventModal extends Component {
    * @param {event} event - JS/React event
    */
   handleEmailChange = (event) => {
-    console.log(event.target.value);
     this.setState({
       email: event.target.value
+    });
+  };
+
+  /**
+   * Sets the reason in the state
+   * @param {event} event - JS/React event
+   */
+  handleReasonChange = (event) => {
+    this.setState({
+      reason: event.target.value
+    });
+  };
+
+  /**
+   * Sets the special status in the state
+   * @param {event} event - JS/React event
+   */
+  handleSpecialChange = (event) => {
+    this.setState({
+      special: event.target.checked
     });
   };
 
@@ -81,7 +106,9 @@ class AddEventModal extends Component {
       title: user.fullName,
       gender: user.gender,
       phone: user.phone,
-      email: user.email
+      email: user.email,
+      reason: user.reason,
+      special: user.special
     });
   };
 
@@ -93,12 +120,14 @@ class AddEventModal extends Component {
       this.state.title,
       this.state.gender,
       this.state.phone,
-      this.state.email
+      this.state.email,
+      this.state.reason,
+      this.state.special
     );
   };
 
   render() {
-    const { title, gender, phone, email } = this.state;
+    const { title, gender, phone, email, reason, special } = this.state;
     return (
       <Modal
         visible={this.props.visible}
@@ -135,10 +164,14 @@ class AddEventModal extends Component {
           gender={gender}
           phone={phone}
           email={email}
+          reason={reason}
+          special={special}
           onTitleChange={this.handleTitleChange}
           onGenderChange={this.handleGenderChange}
           onPhoneChange={this.handlePhoneChange}
           onEmailChange={this.handleEmailChange}
+          onReasonChange={this.handleReasonChange}
+          onSpecialChange={this.handleSpecialChange}
           start={this.props.eventStart}
           end={this.props.eventEnd}
           onTimeChange={this.props.onTimeChange}

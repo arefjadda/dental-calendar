@@ -20,7 +20,7 @@
 body {
   /* Can alternatively define in html {} or :root {} */
   color: rgb(7, 63, 85);
-  background-color: lightgray;
+  background-color: rgb(7, 4, 22);
   font-family: "Oswald", sans-serif;
   font-size: large;
   margin: 0;
@@ -173,6 +173,7 @@ br {
 }
 ol {
   padding-bottom: 20px;
+  text-align: left;
 }
 
 ul,
@@ -190,8 +191,14 @@ h2 {
   color: white;
   padding-top: 20px;
 }
+h4 {
+  color: white;
+  padding-top: 20px;
+  padding-left: 20px;
+  text-align: left;
+  font-size: larger;
+}
 h3,
-h4,
 h5,
 h6 {
 } /* Define consistant font family.*/
@@ -343,6 +350,11 @@ object {
 .gradient {
 }
 .shape {
+}
+
+.aboutPage {
+  width: 50%;
+  margin: auto;
 }
 
 @keyframes App-logo {

@@ -3,7 +3,7 @@ import React from "react";
 const Help = () => {
   return (
     <div>
-      <h2>Steps to Book an Appointment</h2>
+      <h4>Steps to Book an Appointment</h4>
       <ol>
         <li>Press any empty spot on the calendar.</li>
         <li>Fill in the patient's info in the pop-up form.</li>
@@ -12,7 +12,7 @@ const Help = () => {
           to discard the appointment.
         </li>
       </ol>
-      <h2>Steps to Update an Appointment</h2>
+      <h4>Steps to Update an Appointment</h4>
       <ol>
         <li>
           Locate the appointment by navigating through the weeks using the
@@ -24,7 +24,7 @@ const Help = () => {
         </li>
         <li>Update the date and time and click "Update Even".</li>
       </ol>
-      <h2>Steps to Remove an Appointment</h2>
+      <h4>Steps to Remove an Appointment</h4>
       <ol>
         <li>
           Locate the appointment by navigating through the weeks using the

@@ -102,3 +102,14 @@ export const eventHighlighter = {
   zIndex: 1,
   cursor: "pointer"
 };
+
+export const specialHighlighter = {
+  position: "absolute",
+  backgroundColor: "#ffa2a2",
+  borderRadius: "4px",
+  color: "black",
+  padding: "2px 4px",
+  fontSize: "14px",
+  zIndex: 1,
+  cursor: "pointer"
+};

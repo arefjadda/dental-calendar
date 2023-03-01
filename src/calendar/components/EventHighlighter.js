@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import AddEventModal from "./AddEventModal";
 import { generateWeekViewCoordinates } from "../utils";
-import { eventHighlighter } from "../styles";
+import { eventHighlighter, specialHighlighter } from "../styles";
 
 class EventHighlighter extends Component {
   state = {
@@ -27,26 +27,31 @@ class EventHighlighter extends Component {
    * @param {string} gender - Updated gender of the event
    * @param {string} phone - Updated phone of the event
    * @param {string} email - Updated email of the event
+   * @param {string} reason - Updated reason of the event
+   * @param {boolean} special - Updated special status of the event
    */
-  updateEvent = (title, gender, phone, email) => {
+  updateEvent = (title, gender, phone, email, reason, special) => {
     this.props.onEventUpdate(this.props.event.id, {
       title,
       gender,
       phone,
       email,
+      reason,
+      special,
       start: this.state.eventNewStart,
       end: this.state.eventNewEnd
     });
     this.setState({
       showEditEventModal: false
     });
+    this.highlightStyler =
+      special === true ? specialHighlighter : eventHighlighter;
   };
 
   /**
    * Open the edit event modal and initializes the start and end time
    */
   openEditEventModal = () => {
-    console.log(this.props.event.title);
     this.setState({
       showEditEventModal: true,
       eventNewStart: this.props.event.start,
@@ -59,8 +64,6 @@ class EventHighlighter extends Component {
    * @param {arr: moment, moment} - Array containing start and end date of the event
    */
   onCurrentEventTimeChange = (dates) => {
-    console.log(dates);
-    console.log("called");
     this.setState({
       eventNewStart: +dates[0],
       eventNewEnd: +dates[1]
@@ -76,6 +79,9 @@ class EventHighlighter extends Component {
     });
   };
 
+  highlightStyler =
+    this.props.event.special === true ? specialHighlighter : eventHighlighter;
+
   render() {
     const { showEditEventModal, eventNewStart, eventNewEnd } = this.state;
     return (
@@ -86,6 +92,8 @@ class EventHighlighter extends Component {
           eventGender={this.props.event.gender}
           eventPhone={this.props.event.phone}
           eventEmail={this.props.event.email}
+          eventReason={this.props.event.reason}
+          eventSpecial={this.props.event.special}
           visible={showEditEventModal}
           onCancel={this.deleteEvent}
           onClose={this.closeModal}
@@ -101,7 +109,7 @@ class EventHighlighter extends Component {
               this.props.event,
               this.props.startDate
             ),
-            ...eventHighlighter
+            ...this.highlightStyler
           }}
         >
           {this.props.event.title} <br />

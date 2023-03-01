@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
+    <div className="aboutPage">
       <h2>The Best Dental Clinic Scheduling Software Ever</h2>
       <p>
         This dental booking app seeks to simplify scheduling and maximize the

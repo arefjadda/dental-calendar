@@ -80,13 +80,17 @@ class WeekView extends Component {
    * @param {string} gender
    * @param {string} phone
    * @param {string} email
+   * @param {string} reason
+   * @param {boolean} special
    */
-  onOkAddEventModal = (title, gender, phone, email) => {
+  onOkAddEventModal = (title, gender, phone, email, reason, special) => {
     this.props.onNewEvent({
       title,
       gender,
       phone,
       email,
+      reason,
+      special,
       start: this.state.eventStart,
       end: this.state.eventEnd
     });

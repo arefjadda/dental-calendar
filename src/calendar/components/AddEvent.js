@@ -1,9 +1,10 @@
 import React from "react";
-import { Input, DatePicker, Form } from "antd";
+import { Input, DatePicker, Form, Checkbox } from "antd";
 import moment from "moment";
 import { inputStyles } from "../styles";
 
 const { RangePicker } = DatePicker;
+const { TextArea } = Input;
 
 function AddEvent(props) {
   return (
@@ -75,6 +76,21 @@ function AddEvent(props) {
           />
         </Form.Item>
         <Form.Item
+          label="Reason"
+          labelCol={{ span: 4 }}
+          wrapperCol={{ span: 18, offset: 1 }}
+          required
+        >
+          <TextArea
+            size="large"
+            placeholder="Why is the patient visiting?"
+            key="reason"
+            rows={2}
+            value={props.reason}
+            onChange={props.onReasonChange}
+          />
+        </Form.Item>
+        <Form.Item
           label="Date"
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 18, offset: 1 }}
@@ -92,6 +108,16 @@ function AddEvent(props) {
             }}
             format="MMM D, YYYY h a"
           />
+        </Form.Item>
+        <Form.Item wrapperCol={{ span: 10 }}>
+          <Checkbox
+            checked={props.special}
+            key="special"
+            onChange={props.onSpecialChange}
+          >
+            {" "}
+            Special Care Required{" "}
+          </Checkbox>
         </Form.Item>
       </Form>
     </React.Fragment>

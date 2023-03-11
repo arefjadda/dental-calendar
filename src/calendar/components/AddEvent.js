@@ -79,7 +79,6 @@ function AddEvent(props) {
           label="Reason"
           labelCol={{ span: 4 }}
           wrapperCol={{ span: 18, offset: 1 }}
-          required
         >
           <TextArea
             size="large"

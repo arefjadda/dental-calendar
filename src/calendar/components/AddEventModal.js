@@ -13,8 +13,8 @@ class AddEventModal extends Component {
   };
 
   /**
-   * To show the title auto fill and
-   * re-initialize the title on adding new event
+   * To show the event auto fill and
+   * re-initialize the event on adding new event
    */
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.eventTitle) {
@@ -39,7 +39,7 @@ class AddEventModal extends Component {
   }
 
   /**
-   * Sets the title in the state
+   * Sets the name in the state
    * @param {event} event - JS/React event
    */
   handleTitleChange = (event) => {
@@ -116,14 +116,14 @@ class AddEventModal extends Component {
    * Updates the event
    */
   handleOk = () => {
-    this.props.onOk(
-      this.state.title,
-      this.state.gender,
-      this.state.phone,
-      this.state.email,
-      this.state.reason,
-      this.state.special
-    );
+    this.props.onOk({
+      title: this.state.title,
+      gender: this.state.gender,
+      phone: this.state.phone,
+      email: this.state.email,
+      reason: this.state.reason,
+      special: this.state.special
+    });
   };
 
   render() {
@@ -148,7 +148,18 @@ class AddEventModal extends Component {
               </Button>
             </Col>
             <Col span={12} style={{ textAlign: "right" }}>
-              <Button key="back" onClick={this.props.onCancel}>
+              <Button
+                key="back"
+                onClick={() => {
+                  if (
+                    window.confirm(
+                      "Are you sure you want to delete this appointment?"
+                    )
+                  ) {
+                    this.props.onCancel();
+                  }
+                }}
+              >
                 {this.props.editMode ? "Delete" : "Cancel"}
               </Button>
 

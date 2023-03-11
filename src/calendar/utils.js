@@ -22,7 +22,7 @@ export const getAllDaysInTheWeek = (currentDate = moment()) => {
   return days;
 };
 
-// All the hours in the day
+// All the work hours in the day
 export const times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
 /**
@@ -34,13 +34,7 @@ export const times = [9, 10, 11, 12, 13, 14, 15, 16, 17];
  *  end: Time stamp for the end of the event :timeStamp,
  * }
  * @param {timeStamp} startDate - Timestamp of any date in the current week
- * @returns {Object} coordinates - Coordinates object with
- * {
- *  top - CSS top of the element,
- *  left - CSS left of the element,
- *  width - CSS width of the element,
- *  height - CSS height of the element
- * }
+ * @returns {Object} coordinates - Coordinates object
  */
 export const generateWeekViewCoordinates = (event, startDate) => {
   const start = moment(event.start);

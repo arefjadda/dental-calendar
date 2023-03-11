@@ -21,23 +21,14 @@ class EventHighlighter extends Component {
     });
   };
 
-  /**
-   * Updates the event
-   * @param {string} title - Updated title of the event
-   * @param {string} gender - Updated gender of the event
-   * @param {string} phone - Updated phone of the event
-   * @param {string} email - Updated email of the event
-   * @param {string} reason - Updated reason of the event
-   * @param {boolean} special - Updated special status of the event
-   */
-  updateEvent = (title, gender, phone, email, reason, special) => {
+  updateEvent = (event) => {
     this.props.onEventUpdate(this.props.event.id, {
-      title,
-      gender,
-      phone,
-      email,
-      reason,
-      special,
+      title: event.title,
+      gender: event.gender,
+      phone: event.phone,
+      email: event.email,
+      reason: event.reason,
+      special: event.special,
       start: this.state.eventNewStart,
       end: this.state.eventNewEnd
     });
@@ -45,7 +36,7 @@ class EventHighlighter extends Component {
       showEditEventModal: false
     });
     this.highlightStyler =
-      special === true ? specialHighlighter : eventHighlighter;
+      event.special === true ? specialHighlighter : eventHighlighter;
   };
 
   /**
@@ -70,9 +61,6 @@ class EventHighlighter extends Component {
     });
   };
 
-  /**
-   * Closes modal and does nothing more!
-   */
   closeModal = () => {
     this.setState({
       showEditEventModal: false

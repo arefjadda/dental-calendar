@@ -54,11 +54,6 @@ const EventHandler = (function () {
    * @returns {Object} allEvents - A new object reference for all events
    */
   function updateEvent(eventId, updatedEvent, allEvents) {
-    // Object.keys(allEvents).forEach((time) => {
-    //   allEvents[time] = allEvents[time].map((event) =>
-    //     event.id === eventId ? { ...event, ...updatedEvent } : event
-    //   );
-    // });
     deleteEvent(eventId, allEvents);
     addEvent(allEvents, updatedEvent);
     return { ...allEvents };
